@@ -668,6 +668,7 @@ class Environment {
   inline std::vector<double>* destroy_async_id_list();
 
   std::unordered_multimap<int, loader::ModuleWrap*> module_map;
+  node_module* modpending;
 
   std::unordered_map<std::string, loader::PackageConfig> package_json_cache;
 

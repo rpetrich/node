@@ -99,7 +99,8 @@ void InitThreadLocalOnce() {
 Environment::Environment(IsolateData* isolate_data,
                          Local<Context> context,
                          tracing::Agent* tracing_agent)
-    : isolate_(context->GetIsolate()),
+    : modpending(nullptr),
+      isolate_(context->GetIsolate()),
       isolate_data_(isolate_data),
       tracing_agent_(tracing_agent),
       immediate_info_(context->GetIsolate()),
